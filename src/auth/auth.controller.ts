@@ -12,10 +12,12 @@ export class AuthController {
   }
   @MessagePattern('auth.login.user')
   async loginUser(@Payload() user: LoginUserDto) {
-    return user;
+    return this.authService.loginUser(user);
   }
   @MessagePattern('auth.verify.user')
-  async verifyUser(@Payload() user: any) {
+  async verifyUser(@Payload() token: string) {
+    const user = await this.authService.verifyUser(token);
+
     return user;
   }
 }
