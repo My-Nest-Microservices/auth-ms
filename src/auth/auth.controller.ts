@@ -16,7 +16,7 @@ export class AuthController {
   }
   @MessagePattern('auth.verify.user')
   async verifyUser(@Payload() token: string) {
-    const user = await this.authService.verifyUser(token);
+    const user = await this.authService.verifyToken(token);
 
     return user;
   }
