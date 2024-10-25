@@ -17,4 +17,4 @@ steps:
         'europe-southwest1-docker.pkg.dev/microservices-439614/image-registry/auth-ms',
       ]
 options:
-logging: CLOUD_LOGGING_ONLY
+  logging: CLOUD_LOGGING_ONLY
